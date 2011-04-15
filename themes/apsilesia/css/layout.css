@@ -1,0 +1,231 @@
+/* 
+    Document   : style
+    Created on : 2011-01-09, 19:17:14
+    Author     : ko
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+root { 
+    display: block;
+}
+
+body{
+    background: #c2edfe url(../images/apsilesia_07.jpg) bottom repeat-x;
+
+}
+#wrapper {
+    
+    text-align: left;    /* Reset alignment to compensate for 'text-align:center': */
+    width: 993px;        /* Specify the width of the element. This should be the same
+                          as 'body min-width': */
+    margin-left: auto;   /* Set left and right margins to auto, thus centering the
+                          element in the containing (body) tag: */
+    margin-right: auto;
+}
+#header{
+   background: #c2edfe url(../images/apsilesia_02.jpg) no-repeat;
+   text-align: left;    /* Reset alignment to compensate for 'text-align:center': */
+   width: 993px;        /* Specify the width of the element. This should be the same
+                         as 'body min-width': */
+   height: 240px;
+   overflow: hidden;
+}
+
+
+/* Bottom Header 2*/
+#logo{width: 100%;height: 141px;}
+#menu {
+width: 100%;
+margin-top: 10px;
+background:url(../images/menub.jpg) no-repeat;
+margin-left:0px;
+padding-left:10px;
+height:38px;
+font-family: helvetica;
+text-transform: uppercase;
+}
+/* Menu */
+
+#navigation-menu {
+margin-top: 10px;
+background:url(../images/menub.jpg) no-repeat;
+margin-left:0px;
+padding-left:10px;
+height:38px;
+font-family: helvetica;
+text-transform: uppercase;
+width:803px;
+
+}
+
+#navigation-menu ul {
+margin:0px;padding:10px;
+list-style:none;
+}
+
+#navigation-menu li {
+display:inline;
+margin:0px;
+padding:0px;
+
+}
+
+#navigation-menu a {
+/*float:left;
+background:;*/
+padding-right:1px;text-decoration:none;
+}
+
+#navigation-menu a span {
+
+/*display:block;
+float:left;background:;*/
+padding-left:5px;
+padding-right:5px;
+padding-top:10px;
+height:28px;
+color:white;
+/*font-weight:;*/
+font-size:16px;
+border-left:0px solid #dcdcdc;
+margin-right:0px;
+}
+
+#navigation-menu a span {
+float:none;
+}
+
+#navigation-menu a:hover span {
+color:#fff;
+/*background:#800000 url(http://1.bp.blogspot.com/_UtQyNOQGaVM/TOjNkIehdwI/AAAAAAAADSQ/YByRPCAk6sY/s1600/bluehover.png)repeat-x;*/
+height:28px;
+padding-left:5px;
+padding-right:5px;
+padding-top:10px;
+font-size:16px;
+text-decoration: underline;
+}
+
+#contentw {width: 993px; overflow: hidden;min-height: 100px;overflow: auto;margin-top: 20px;padding:0 5px;}
+#sidebar { float: left;width: 20%;}
+#content {float: right;width: 80%;}
+#Sidebar { 
+ 	width: 200px; 
+	float: left;  
+	margin: 10px 0 0 0;
+	padding: 0;
+}
+	#Sidebar .sidebarBox {
+		margin: 0 0 5px 0;
+		padding-bottom: 2px;
+		background: #EFEFEF url(../images/sidebarHeader.gif) no-repeat left top; 
+	}
+	#Sidebar ul {
+		margin: 2px 0 5px 3px;
+	}
+		#Sidebar li {
+			margin: 8px 2px;
+			list-style: none;
+		}
+	#Sidebar h3 { 
+		clear: both; 
+		text-transform: lowercase;
+		color: #fff;
+		font-weight: 700; 
+		font-size: 1.4em; 
+		margin: 0 0 10px 0;
+		line-height: 1.8;
+		padding: 1px 0 0 10px;
+		background: transparent url(../images/sidebarHeaderSub.gif) repeat-x center left;
+	}
+	
+	#Sidebar .sidebarBottom {
+		height: 15px;
+		display: block;
+		width: 200px;
+		margin: -5px 0 0 0;
+		background: #EFEFEF url(../images/sidebarBottomBg.gif) no-repeat center bottom;
+	}
+	#Sidebar a em {
+		font-style: normal;
+	}
+	#Sidebar p {
+		font-size: 11px;
+	 	clear: both;
+	 	margin: 10px 10px 0 10px;
+	}
+#login{margin: 380px 0 0 0;}
+.v-menu {border: solid 1px #7F9FBF; width:190px; clear:both;background:#F7F7F7; -moz-border-radius: 10px; -webkit-border-radius: 10px; }
+ul.v-menu, .v-menu li {padding:0;margin:0; list-style:none;}
+ul.v-menu {clear:both;margin: 0px 0 5px 3px;}
+.all {
+    background: #fff url(../images/apsilesia_06.jpg) no-repeat; width:993px;height: 414px;
+    
+}
+.home {
+    background: #fff url(../images/apsilesia_06b.jpg) no-repeat; width:993px;height: 623px;
+}
+.poster {z-index:10; position:relative}
+img.shadow {
+	/* This centers the image */
+display: block;
+
+/* This adds the border */
+padding:8px;
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 2px 2px 1px;
+background-color:white;
+}
+.login-block {
+    height: 150px;
+    width: 280px;
+    padding:20px;
+    font-weight:bold;
+    font-size:12px;
+    line-height:12px;
+
+}
+.login-block label {
+        float: left;
+        text-align: right;
+        margin-right: 15px;
+        width: 70px;
+}
+/*.login-block input{color:#333333; margin-left:10px;}*/
+
+.login-block li{
+padding-bottom:6px;
+text-align:right;
+list-style:none;
+text-decoration:none;
+}
+.login-block fieldset{float: right;}
+.login-block ul {float: left}
+.login-block button{
+line-height:24px;
+float:right;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+text-align:center;
+cursor:pointer;
+}
+
+.green-button{
+/*background:url(pic/button.png);*/
+display:block;
+color:#FFFFFF;
+font-size:11px;
+text-decoration:none;
+width:81px;
+height:26px;
+line-height:24px;
+text-align:center;
+}
