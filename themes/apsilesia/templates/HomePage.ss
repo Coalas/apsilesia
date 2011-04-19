@@ -24,17 +24,17 @@
         
     <div id="header">
     <div id ="logo">
-        <img src="$ThemeDir/images/logo.jpg" alt="logo"/>
+        <img src="$ThemeDir/images/apsilesia3_02.jpg" alt="logo"/>
         </div>
-    
+    <div id="cloud">
     <div id="navigation-menu">
     <% include Navigation %>
     
     </div>
-   
+   </div>
     </div>
     
-    <div id="contentw" style="width: 993px; overflow: hidden;overflow: auto;margin-top: 20px; position: relative; z-index: 100; margin-bottom: -200px; ">
+    <div id="contentw" style="width: 354px; overflow: hidden;overflow: auto;margin-top: 20px; position: relative; z-index: 100; margin-bottom: -200px; ">
     <a href="program"><img src="themes/apsilesia/images/final.jpg" alt="plakat" class="shadow" style="margin-left:40px;"/></a>    
      
     

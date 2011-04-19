@@ -24,12 +24,12 @@
         
     <div id="header" >
     <div id ="logo">
-        <img src="$ThemeDir/images/logo.jpg" alt="logo"/>
+        <img src="$ThemeDir/images/apsilesia3_02.jpg" alt="logo"/>
         </div>
-    
+    <div id="cloud">
     <div id="navigation-menu">
     <% include Navigation %>
-    
+    </div>
     </div>
     </div>
     

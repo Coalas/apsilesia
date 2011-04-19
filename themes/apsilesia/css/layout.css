@@ -29,17 +29,18 @@ body{
     margin-right: auto;
 }
 #header{
-   background: #c2edfe url(../images/apsilesia_02.jpg) no-repeat;
+   background: #c2edfe;
    text-align: left;    /* Reset alignment to compensate for 'text-align:center': */
    width: 993px;        /* Specify the width of the element. This should be the same
                          as 'body min-width': */
-   height: 240px;
+   height: 206px;
    overflow: hidden;
 }
 
 
 /* Bottom Header 2*/
-#logo{width: 100%;height: 141px;}
+#logo{width: 307px;height: 206px;float:left;}
+#cloud {width: 686px;height: 206px;float:right; background: url(../images/apsilesia3_03.jpg) no-repeat;}
 #menu {
 width: 100%;
 margin-top: 10px;
@@ -53,14 +54,14 @@ text-transform: uppercase;
 /* Menu */
 
 #navigation-menu {
-margin-top: 10px;
-background:url(../images/menub.jpg) no-repeat;
-margin-left:0px;
-padding-left:10px;
-height:38px;
+margin-top: 141px;
+background:url(../images/menub.jpg) right no-repeat;
+margin-left:-100px;
+padding-left:5px;
+height:39px;
 font-family: helvetica;
 text-transform: uppercase;
-width:803px;
+width:781px;
 
 }
 
@@ -92,7 +93,7 @@ padding-top:10px;
 height:28px;
 color:white;
 /*font-weight:;*/
-font-size:16px;
+font-size:1em;
 border-left:0px solid #dcdcdc;
 margin-right:0px;
 }
@@ -108,11 +109,11 @@ height:28px;
 padding-left:5px;
 padding-right:5px;
 padding-top:10px;
-font-size:16px;
+font-size:1em;
 text-decoration: underline;
 }
 
-#contentw {width: 993px; overflow: hidden;min-height: 100px;overflow: auto;margin-top: 20px;padding:0 5px;}
+#contentw {width: 993px; overflow: hidden;min-height: 100px;overflow: auto;margin-top: 20px;padding:0 10px;}
 #sidebar { float: left;width: 20%;}
 #content {float: right;width: 80%;}
 #Sidebar { 
@@ -169,7 +170,7 @@ ul.v-menu {clear:both;margin: 0px 0 5px 3px;}
     
 }
 .home {
-    background: #fff url(../images/apsilesia_06b.jpg) no-repeat; width:993px;height: 623px;
+    background: #fff url(../images/apsilesia_06b.jpg) no-repeat; width:993px;height: 620px;
 }
 .poster {z-index:10; position:relative}
 img.shadow {
