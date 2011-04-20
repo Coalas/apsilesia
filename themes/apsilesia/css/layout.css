@@ -114,6 +114,7 @@ text-decoration: underline;
 }
 
 #contentw {width: 993px; overflow: hidden;min-height: 100px;overflow: auto;margin-top: 20px;padding:0 10px;}
+#impreza { background: url(../images/impreza.jpg) no-repeat;float: right;width: 420px;height: 111px;margin-top: -150px;margin-right:140px;}
 #sidebar { float: left;width: 20%;}
 #content {float: right;width: 80%;}
 #Sidebar { 
