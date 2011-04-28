@@ -117,6 +117,8 @@ text-decoration: underline;
 #impreza { background: url(../images/impreza2.jpg) no-repeat;float: right;width: 433px;height: 111px;margin-top: -150px;margin-right:127px;}
 #sidebar { float: left;width: 20%;}
 #content {float: right;width: 80%;}
+
+#partners{margin-top:-4px;}
 #Sidebar { 
  	width: 200px; 
 	float: left;  
@@ -167,11 +169,11 @@ text-decoration: underline;
 ul.v-menu, .v-menu li {padding:0;margin:0; list-style:none;}
 ul.v-menu {clear:both;margin: 0px 0 5px 3px;}
 .all {
-    background: #fff url(../images/apsilesia_06.jpg) no-repeat; width:993px;height: 414px;
+    width:993px;height: 437px;
     
 }
 .home {
-    background: #fff url(../images/apsilesia_06b.jpg) no-repeat; width:993px;height: 620px;
+    width:993px;height: 620px;
 }
 .poster {z-index:10; position:relative}
 img.shadow {

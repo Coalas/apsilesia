@@ -40,8 +40,9 @@
     
     </div>
 <div id="footerback" class="all">
-<div id="footer">
-
+<img src="$ThemeDir/images/apsilesia_06.jpg" />
+<div id="partners" class="slideshow">
+<img src="$ThemeDir/logos1.jpg" />
 </div>
 </div>
 </div>

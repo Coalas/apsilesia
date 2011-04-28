@@ -42,8 +42,9 @@
     </div>
 <div id="impreza"></div>
 <div id="footerback" class="home">
-<div id="footer">
-
+<img src="$ThemeDir/images/apsilesia_06b.jpg" />
+<div id="partners" class="slideshow">
+<img src="$ThemeDir/logos1.jpg" />
 </div>
 </div>
 </div>

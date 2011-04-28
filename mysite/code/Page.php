@@ -37,5 +37,12 @@ class Page_Controller extends ContentController {
 		Requirements::themedCSS('layout'); 
 		Requirements::themedCSS('typography'); 
 		Requirements::themedCSS('form'); 
+		Requirements::javascript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
+		Requirements::javascript("http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.2.74.js");
+		Requirements::customScript('$(document).ready(function() {
+		jQuery(".slideshow").cycle({
+		fx: "fade" 
+					});
+		});');
 	}
 }

@@ -86,7 +86,7 @@ class ContactPage_Controller extends Page_Controller
 	public function init() {
 		parent::init();
 		Validator::set_javascript_validation_handler('none');  
-		Requirements::javascript("sapphire/thirdparty/jquery/jquery-packed.js"); 
+		//Requirements::javascript("sapphire/thirdparty/jquery/jquery-packed.js"); 
 		Requirements::javascript("http://www.google.com/jsapi?key=ABQIAAAAdehNDAxA7PP_p_gGwfWVHRRkuAh3IcgAYnTTakPcaoWNtN3vChQWB5e-rxahxjYrbS1hbwCSHOHiNg"); 
 		Requirements::javascript("sapphire/thirdparty/googlemapsjs/mapsloader.js");
 		Requirements::javascript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
