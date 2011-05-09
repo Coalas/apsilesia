@@ -23,7 +23,7 @@
 				<div id="NavigationBar">
 					<div id="Previous">
 						<% if CurrentGalleryItems.NotFirstPage %>
-							<a rel="$JSPrevPage" href="$CurrentGalleryItems.PrevLink" title="View the previous page">&lt; Previous</a>
+							<a rel="$JSPrevPage" href="$CurrentGalleryItems.PrevLink" title="Wstecz">&lt; Poprzednia</a>
 						<% end_if %>
 					</div>
 					<div id="PageNumbers">

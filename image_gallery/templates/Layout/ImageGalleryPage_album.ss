@@ -36,7 +36,7 @@
 		<% if GalleryItems.MoreThanOnePage %>
 			<ul id="pagination-imagegallery">		
 				<% if GalleryItems.NotFirstPage %>
-					<li class="previous"><a title="<% _t('VIEWPREVIOUSPAGE','View the previous page') %>" href="$GalleryItems.PrevLink">&laquo;<% _t('PREVIOUS','Previous') %></a></li>				
+					<li class="previous"><a title="<% _t('VIEWPREVIOUSPAGE','Wstecz') %>" href="$GalleryItems.PrevLink">&laquo;<% _t('PREVIOUS','Poprzednia') %></a></li>				
 				<% else %>	
 					<li class="previous-off">&laquo;<% _t('PREVIOUS','Previous') %></li>
 				<% end_if %>
