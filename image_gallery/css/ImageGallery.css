@@ -8,17 +8,7 @@ ul.gallery-layout {margin:0;padding:0;}
 #album-list ul li .defaultImage a:hover {background:#ccc;}
 #album-list ul li .galleryDetails {width:300px;float:left;padding:12px 0 20px 40px;}
 #album-list ul li h4 {margin:0;padding:0;}
-.gallery-layout-wrapper img {
-  display: block;
 
-/* This adds the border */
-padding:6px;
-border:solid;
-border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
-border-width: 1px 2px 2px 1px;
-background-color:white;
-  
-}
 #pagination-imagegallery {border:0; margin:10px 0 0 0; padding:0;clear:both;}
 #pagination-imagegallery li{
 border:0; margin:0; padding:0;
@@ -71,7 +61,7 @@ border:solid 1px #0e509e;
 .gallery-layout li a {visibility:hidden;}
 .gallery-layout.loaded li a {visibility:visible;}
 
-.album-nav {overflow:hidden;border:1px solid #fff;border-width:1px 0;padding:5px 0;margin:10px 0;}
+.album-nav {overflow:hidden;border:1px solid #aaa;border-width:1px 0;padding:5px 0;margin:10px 0;}
 .album-nav ul {margin:0;padding:0;}
 .album-nav li {width:48%;margin:0;padding:1%;list-style:none;}
 .album-nav li.next {float:right;}

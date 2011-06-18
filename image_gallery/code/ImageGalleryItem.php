@@ -13,7 +13,7 @@ class ImageGalleryItem extends DataObject
 	static $has_one = array (
 		'ImageGalleryPage' => 'ImageGalleryPage',
 		'Album' => 'ImageGalleryAlbum',
-		'Image' => 'ImageGalleryImage'
+		'Image' => 'Image'
 	);
 	
 	public function getCMSFields_forPopup()

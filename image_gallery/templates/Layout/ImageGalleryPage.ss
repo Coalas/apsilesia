@@ -3,7 +3,7 @@
 <div class="typography">
 	<% if Albums %>
 		<div id="Sidebar" class="typography">
-			<div class="v-menu">
+			<div class="sidebarBox">
 				<h3><% sprintf(_t('ALBUMSINGALLERY','Albums in %s'),$Title) %></h3>
 				<ul id="Menu2">
 				<% control Albums %>

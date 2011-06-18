@@ -198,11 +198,12 @@
 	border: none;
 }
 	.typography img.right {
-		float: right;
-		margin-left: 20px;
+		 float: right;
+		 padding: 1em 0 1em 1em; 
 	}
 	.typography img.left {
 		float: left;
+		padding: 1em 1em 1em 0; 
 	}
 	.typography img.leftAlone {
 		float: left;

@@ -27,4 +27,5 @@ SiteTree::enable_nested_urls();
 HtmlEditorConfig::get('cms')->enablePlugins('googlemaps'); 
 HtmlEditorConfig::get('cms')->insertButtonsAfter('tablecontrols', 'googlemaps');
 Director::set_environment_type("dev");
-SS_Log::add_writer(new SS_LogFileWriter(Director::baseFolder() . '/error_log.txt'), SS_Log::ERR); 
+//SS_Log::add_writer(new SS_LogFileWriter(Director::baseFolder() . '/error_log.txt'), SS_Log::ERR); 
+

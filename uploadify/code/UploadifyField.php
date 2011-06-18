@@ -61,6 +61,9 @@ abstract class UploadifyField extends FormField
 	 * @var boolean Puts Uploadify in debug mode to show all of the parameters on the template
 	 */
 	protected static $debug = false;
+	
+	
+	protected static $authenticate = true;
 
 
 	/**
@@ -97,6 +100,11 @@ abstract class UploadifyField extends FormField
 	 * @var boolean Allow the user to choose an existing file
 	 */
 	public $allowImport = true;
+	
+	
+	public $columnCount = 2;
+	
+	public $allowDelete = true;
 	
 
 	/**
@@ -176,6 +184,11 @@ abstract class UploadifyField extends FormField
 		return preg_replace('|^'.ASSETS_DIR.'/|', '', $dirname);
 	}
 	
+	
+	public static function disable_authentication() {
+		self::$authenticate = false;
+	}
+	
 
 	/**
 	 * The constructor for the Uploadify field. Sets some more default settings that require
@@ -191,7 +204,7 @@ abstract class UploadifyField extends FormField
 		parent::__construct($name, $title, null, $form);
 		// A little hack to make things easier in the CMS
 		$controller = Director::urlParam('Controller');
-		if(is_subclass_of($controller,"LeftAndMain")) {
+		if(is_subclass_of($controller,"LeftAndMain") || is_subclass_of($controller,"ModelAdmin_CollectionController") || $controller == "ModelAdmin_CollectionController" || is_subclass_of($controller,"ModelAdmin_RecordController") || $controller == "ModelAdmin_RecordController") {
 			self::$backend = true;
 		}
 
@@ -252,6 +265,14 @@ abstract class UploadifyField extends FormField
 	
 	public function setUploadFolder($dir) {
 		$this->uploadFolder = $dir;
+	}
+	
+	public function setDeleteEnabled($bool = true) {
+		$this->allowDelete = $bool;
+	}
+	
+	public function setColumnCount($count) {
+		$this->columnCount = $count;
 	}
 	
 	public function getUploadFolder() {
@@ -350,7 +371,7 @@ abstract class UploadifyField extends FormField
 	public function importlist(SS_HTTPRequest $request) {
 		if($id = $request->requestVar('FolderID')) {
 			if(is_numeric($id)) {
-				$files = DataObject::get("File", "ParentID = $id AND ClassName != 'Folder'");
+				$files = DataObject::get("File", "\"ParentID\" = $id AND \"File\".\"ClassName\" != 'Folder'");
 				return $this->customise(array(
 					'Files' => $files
 				))->renderWith('ImportList');
@@ -366,6 +387,11 @@ abstract class UploadifyField extends FormField
 	 */
 	public function CanSelectFolder() {
 		return $this->allowFolderSelection;
+	}
+	
+	
+	public function ColumnCount() {
+		return $this->columnCount;
 	}
 	
 
@@ -415,14 +441,25 @@ abstract class UploadifyField extends FormField
 
 		if($this->form) {
 			if(!$this->getSetting('script')) {
-				$this->setVar('script',urlencode(Director::baseURL().Director::makeRelative($this->Link('upload'))));		
-				// long script strings cause IO error on Apple/Mac Flash platforms\
-				// so parse out complextablefield
-				$script = urlencode(Director::baseURL().Director::makeRelative($this->Link('upload')));
-				if($pos = strpos($script,'%3Fctf')) {
-					$script = substr($script,0,$pos);
+				if(!self::$authenticate && $this->Backend()) {
+					$this->setVar('script', urlencode(Controller::join_links(
+						Director::baseURL(),
+						"UploadifyUploader",
+						"?uploadFolder=".$this->getUploadFolder().
+						"&imageClass=".$this->getSetting('image_class').
+						"&fileClass=".$this->getSetting('file_class')
+					)));
 				}
-				$this->setVar('script',$script);				
+				else {
+					$this->setVar('script',urlencode(Director::baseURL().Director::makeRelative($this->Link('upload'))));		
+					// long script strings cause IO error on Apple/Mac Flash platforms\
+					// so parse out complextablefield
+					$script = urlencode(Director::baseURL().Director::makeRelative($this->Link('upload')));
+					if($pos = strpos($script,'%3Fctf')) {
+						$script = substr($script,0,$pos);
+					}
+					$this->setVar('script',$script);
+				}
 			}
 			if(!$this->getSetting('refreshlink')) {
 				$this->setVar('refreshlink', Director::baseURL().Director::makeRelative($this->Link('refresh')));
@@ -449,8 +486,9 @@ abstract class UploadifyField extends FormField
 		if(!$id) {
 			$id = $this->CurrentUploadFolder()->ID;
 		}
+		$class = (class_exists("SimpleTreeDropdownField")) ? "SimpleTreeDropdownField" : "DropdownField";
 		$group = new FieldGroup(
-			$d = new SimpleTreeDropdownField("UploadFolderID_{$this->id()}", '', "Folder", $id, "Filename"),
+			$d = new $class("UploadFolderID_{$this->id()}", '', "Folder", $id, "Filename"),
 			new LiteralField("slash{$this->id()}"," / "),
 			new TextField("NewFolder_{$this->id()}", ""),
 			$a = new FormAction("ok_{$this->id()}", _t('Uploadify.CHANGEFOLDERACTION','Change'))
@@ -468,7 +506,8 @@ abstract class UploadifyField extends FormField
 	 * @return DropdownField
 	 */
 	public function ImportDropdown() {
-		$d = new SimpleTreeDropdownField("ImportFolderID_{$this->id()}", _t('Uploadify.CHOOSEIMPORTFOLDER','Choose a folder'), "Folder", null, "Filename");
+		$class = (class_exists("SimpleTreeDropdownField")) ? "SimpleTreeDropdownField" : "DropdownField";
+		$d = new $class("ImportFolderID_{$this->id()}", _t('Uploadify.CHOOSEIMPORTFOLDER','Choose a folder'), "Folder", null, "Filename");
 		$d->setEmptyString('-- ' . _t('Uploadify.PLEASESELECT','Select a folder') . ' --');
 		$d->addExtraClass("{'url' : '".$this->Link('importlist')."' }");
 		return $d;
@@ -484,6 +523,14 @@ abstract class UploadifyField extends FormField
 		return $this->getSetting('multi');
 	}
 
+	/**
+	 * A quick template accessor to determine if delete link is enabled
+	 *
+	 * @return boolean
+	 */
+	public function DeleteEnabled() {
+		return $this->allowDelete;
+	}
 
 	/**
 	 * A template accessor to determine if we're in the backend.

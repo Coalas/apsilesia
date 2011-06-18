@@ -40,7 +40,12 @@ THE SOFTWARE.
         .upload_previews ul li.uploadifyFile { position:relative;height:32px; }
                 .upload_previews ul li.uploadifyFile div.image {width:50px;float:left;}
 		.upload_previews ul li.uploadifyFile div.filename { padding-right:40px;height:32px;line-height:32px; }
-		.upload_previews ul li.uploadifyFile div.delete { position:absolute; top:10px; right:10px; width:40px; text-align:right; }
+		.upload_previews ul li.uploadifyFile div.delete { position:absolute; top:10px; right:10px; width:160px; text-align:right; }
+			.upload_previews ul li.uploadifyFile div.delete a {text-transform:uppercase;background:#aaa;text-decoration:none;color:#fff;padding:4px;font-size:9px;}
+			.upload_previews ul li.uploadifyFile div.delete a.delete {background:rgba(255,0,0,1);}
+			.upload_previews ul li.uploadifyFile div.delete a:hover {background:#ccc;}
+			.upload_previews ul li.uploadifyFile div.delete a.delete:hover {background:rgba(255,0,0,.7);}
+
 
 .backend .uploadifyfield_queue {max-height:150px;overflow:auto;}		
 /* clearfix */
@@ -79,11 +84,15 @@ div.tabNavigation ul.navigation li a.selected { background:#e9e9e9; color:#777; 
 .import_list {padding:10px 20px;border-top:1px solid #ccc;margin:10px 0;border-bottom: 1px solid #ccc;padding-bottom:6px;}
 .import_list.loading {background:url(../images/ajax-loader.gif) center no-repeat;}
 .import_list li {margin:4px 0;border-bottom:1px solid #ccc;float:left;width:48%;height:4em;list-style:none;}
+.import_list .columns_1 li {float:none; width:auto;}
+.import_list .columns_1 li.odd {border-right:0;}
+.import_list .columns_1 li.even {padding-left:0;}
 .import_list li.odd {border-right:1px solid #ccc;}
 .import_list li.even {padding-left:6px;}
 .import_list li.disabled label {color:#aaa;}
 .import_list input, .import_list label {vertical-align:100%;}
 .import_message {display:none; background:#dff2bf;padding:4px;}
+.import_input_select a {cursor:pointer;}
 
 .current_folder {margin:8px 0;}
 .clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}

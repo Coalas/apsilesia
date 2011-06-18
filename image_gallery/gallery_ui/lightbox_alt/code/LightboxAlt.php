@@ -8,7 +8,7 @@ class LightboxAlt extends ImageGalleryUI
 	
 	public function initialize()
 	{
-		//Requirements::javascript(THIRDPARTY_DIR.'/jquery/jquery.js'); 
+		Requirements::javascript(THIRDPARTY_DIR.'/jquery/jquery.js'); 
 		Requirements::javascript('image_gallery/gallery_ui/lightbox_alt/javascript/jquery.color.js');
 		Requirements::javascript('image_gallery/gallery_ui/lightbox_alt/javascript/jquery.lightbox.js');
 		Requirements::css('image_gallery/gallery_ui/lightbox_alt/css/jquery.lightbox.css');

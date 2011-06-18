@@ -141,7 +141,6 @@ class ImageGalleryManager extends ImageDataObjectManager
 	public function getPreviewFieldFor($fileObject, $size = 150)
 	{
 		if($fileObject instanceof Image) {
-		echo $fileObject->ID . " " . $fileObject->Filename;
 			$URL = $fileObject->SetHeight($size)->URL;
 			return new LiteralField("icon",
 				"<div class='current-image'>
@@ -221,7 +220,7 @@ class ImageGalleryManager_Controller extends Controller
 	
 	public function rotateimage()
 	{
-		if($image = DataObject::get_by_id("ImageGalleryImage", $this->urlParams['ID'])) {
+		if($image = DataObject::get_by_id("Image", $this->urlParams['ID'])) {
 			$url = $this->urlParams['OtherID'] == 'cw' ? $image->RotateClockwise()->URL : $image->RotateCounterClockwise()->URL;
 			$original_file = $image->Filename;
 			if(copy(Director::baseFolder().'/'.$url, Director::baseFolder().'/'.$original_file)) {

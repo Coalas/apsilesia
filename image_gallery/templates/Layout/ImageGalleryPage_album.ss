@@ -1,10 +1,21 @@
+<div id="primaryContent">
+<div class="innerpad">
 <div class="typography">
-	<% if Menu(3) %>
-		<% include CupBar %>
-		<div id="content">
+	<% if Albums %>
+		<div id="Sidebar" class="typography">
+			<div class="sidebarBox">
+				<h3>$Title</h3>
+				<ul id="Menu2">
+				<% control Albums %>
+					<li class="$LinkingMode"><a class="$LinkingMode" href="$Link" title="$AlbumName">$AlbumName</a></li>
+				<% end_control %>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="sidebarBottom"></div>
+		</div>
+	<div id="Content">
 	<% end_if %>
-	
-
 		<h2>$AlbumTitle</h2>
 		$GalleryLayout
 		<div class="album-nav">
@@ -36,7 +47,7 @@
 		<% if GalleryItems.MoreThanOnePage %>
 			<ul id="pagination-imagegallery">		
 				<% if GalleryItems.NotFirstPage %>
-					<li class="previous"><a title="<% _t('VIEWPREVIOUSPAGE','Wstecz') %>" href="$GalleryItems.PrevLink">&laquo;<% _t('PREVIOUS','Poprzednia') %></a></li>				
+					<li class="previous"><a title="<% _t('VIEWPREVIOUSPAGE','View the previous page') %>" href="$GalleryItems.PrevLink">&laquo;<% _t('PREVIOUS','Previous') %></a></li>				
 				<% else %>	
 					<li class="previous-off">&laquo;<% _t('PREVIOUS','Previous') %></li>
 				<% end_if %>
@@ -54,11 +65,12 @@
 				<% end_if %>
 			</ul> 		
 		<% end_if %>
-	<% if Menu(3) %>
+	<% if Albums %>
 		</div>
 	<% end_if %>
 </div>
-
+</div>
+</div>
 
 	
 	
